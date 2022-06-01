@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-	<meta charset="UTF-8">
+<head th:replace="partials/partials.html :: head ('welcome to journey')">
+
 	<title>Home</title>
 </head>
 <body>
-<h1>Hello!</h1>
+<header th:replace="partials/partials.html :: navbar"></header>
 
 
 </body>
