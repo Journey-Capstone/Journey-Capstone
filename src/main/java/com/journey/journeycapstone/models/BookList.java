@@ -1,20 +1,27 @@
 package com.journey.journeycapstone.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "bookLists")
 public class BookList {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     //references user(id)
-    private long user_id;
+    @OneToOne
+    private User owner;
+
     //references book(id)
-    private long book_id;
+    @OneToMany
+    private List<Book> books;
+
     //references status(id)
-    private long status_id;
+    @OneToOne
+    private Status status;
 
     public BookList(){}
 
@@ -26,27 +33,36 @@ public class BookList {
         this.id = id;
     }
 
-    public long getUser_id() {
-        return user_id;
+//    public long getBook_id() {
+//        return book_id;
+//    }
+//
+//    public void setBook_id(long book_id) {
+//        this.book_id = book_id;
+//    }
+
+
+    public User getOwner() {
+        return owner;
     }
 
-    public void setUser_id(long user_id) {
-        this.user_id = user_id;
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 
-    public long getBook_id() {
-        return book_id;
+    public List<Book> getBooks() {
+        return books;
     }
 
-    public void setBook_id(long book_id) {
-        this.book_id = book_id;
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 
-    public long getStatus_id() {
-        return status_id;
+    public Status getStatus() {
+        return status;
     }
 
-    public void setStatus_id(long status_id) {
-        this.status_id = status_id;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }

@@ -1,6 +1,7 @@
 package com.journey.journeycapstone.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "authors")
@@ -11,6 +12,9 @@ public class Author {
     private long id;
 
     private String author_name;
+
+    @OneToMany
+    List<Book> books;
 
     public long getId() {
         return id;
