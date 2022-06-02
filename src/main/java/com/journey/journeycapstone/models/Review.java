@@ -16,13 +16,14 @@ public class Review {
 
     private String description;
     //references user(id)
-    private long user_id;
+//    @OneToOne
+//    private User reviewOwner;
     //references book(id)
     private long book_id;
 
-//    @ManyToOne
-//    @JoinColumn(name = "review_id")
-//    private Review review;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Review(){
 
@@ -58,14 +59,6 @@ public class Review {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public long getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(long user_id) {
-        this.user_id = user_id;
     }
 
     public long getBook_id() {
