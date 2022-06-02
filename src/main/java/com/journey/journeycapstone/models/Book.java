@@ -1,6 +1,7 @@
 package com.journey.journeycapstone.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "books")
@@ -13,8 +14,6 @@ public class Book {
     private long isbn;
 
     private String title;
-
-    private long author_id;
 
     private long published_date;
 
@@ -29,6 +28,17 @@ public class Book {
     private String amazon_url;
 
     private String google_url;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "book")
+    private List<Review> reviews;
+
+
+    @OneToOne
+    @JoinColumn(name = "book_id")
+    private BookList bookList;
+
+    @OneToOne
+    private Author author;
 
     public Book(){
     }
@@ -57,12 +67,28 @@ public class Book {
         this.title = title;
     }
 
-    public long getAuthor_id() {
-        return author_id;
+    public List<Review> getReviews() {
+        return reviews;
     }
 
-    public void setAuthor_id(long author_id) {
-        this.author_id = author_id;
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+    public BookList getBookList() {
+        return bookList;
+    }
+
+    public void setBookList(BookList bookList) {
+        this.bookList = bookList;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     public long getPublished_date() {
