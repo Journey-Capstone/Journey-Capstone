@@ -6,12 +6,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/reviews")
-public class ReviewController {
+@RequestMapping("/catalog")
+public class BookController {
 
-    @GetMapping()
+    @GetMapping
     @ResponseBody
-    public String reviews(){
-        return "List of our reviews";
+    public String books(){
+        return "Catalog of books page";
     }
+
+
+
 }
