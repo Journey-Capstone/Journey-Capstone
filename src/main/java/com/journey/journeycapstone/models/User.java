@@ -38,8 +38,8 @@ public class User {
     @Column(length = 30)
     private String State;
 
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-//    private List<Review> reviews;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Review> reviews;
 
     public User() {
     }
