@@ -16,8 +16,8 @@ public class BookList {
     private User owner;
 
     //references book(id)
-    @OneToMany
-    private List<Book> books;
+//    @OneToMany
+//    private List<Book> books;
 
     //references status(id)
     @OneToOne
@@ -50,13 +50,13 @@ public class BookList {
         this.owner = owner;
     }
 
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
+//    public List<Book> getBooks() {
+//        return books;
+//    }
+//
+//    public void setBooks(List<Book> books) {
+//        this.books = books;
+//    }
 
     public Status getStatus() {
         return status;
