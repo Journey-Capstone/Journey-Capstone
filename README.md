@@ -23,7 +23,7 @@ Introduce yourself to the works of your favorite authors’ story-telling, or en
 * Search functionality that allows users to search through the Titles in your database by title, author, genre, etc. 
 * Show the user's Title Recommendations/Reviews on their profile page 
 * Ensure usernames are unique
-* Dynamic navbar for logged in users and guests 
+* Dynamic navbar for logged-in users and guests 
 * Allow users to update and delete reviews 
 * Allow users to update their profile information 
 * Error messages 
@@ -65,8 +65,23 @@ This section should list any major frameworks/libraries used for the project.
     * [Kanban Board](https://github.com/orgs/Journey-Capstone/projects/1)
   * Developing   (<small>06/01/2022</small>)
     * Controllers
+      * [X] Home Controller
+      * [X] User Controller
+        * Hashed password for user on signup page (Save for later time - security)
+      * [X] Review Controller
+      * [X] Greetings Controller
+      * [X] Book Controller
+      * [X] Authentication Controller
     * Modeling
     * Views
+      * [X] Register
+      * [ ] Profile
+      * [ ] login
+      * [ ] reviews
+      * [ ] singleBook
+      * [ ] main
+      * [ ] catalog
+      * [ ] about
 
 <hr>
 

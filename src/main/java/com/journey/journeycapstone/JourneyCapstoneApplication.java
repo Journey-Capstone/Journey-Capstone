@@ -10,4 +10,6 @@ public class JourneyCapstoneApplication {
         SpringApplication.run(JourneyCapstoneApplication.class, args);
     }
 
+
+
 }

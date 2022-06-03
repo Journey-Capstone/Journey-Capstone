@@ -32,6 +32,14 @@ public class UserController {
         return "users/register";
     }
 
+    @PostMapping("/register")
+    public String registerSubmit(@ModelAttribute User user, Model model){
+        model.addAttribute("user", user);
+        return "redirect:/login";
+    }
+
+
+
 
     //When to start hashing.. --> wait until deployment
 
