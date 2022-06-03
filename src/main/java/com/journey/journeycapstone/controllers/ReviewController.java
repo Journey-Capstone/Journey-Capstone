@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ReviewController {
 
     @GetMapping
-    @ResponseBody
     public String reviews(){
-        return "this is our reviews";
+        return "reviews/reviews";
     }
 }
