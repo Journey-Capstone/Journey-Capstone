@@ -13,13 +13,13 @@
 		<p>Leave reviews, rate the book, and explore new bokos that are ahead. so econxt thins is fdf sd   nilnu   rhjt ewir   fasdfad asdfasd j das ad adfjdf adfjwefqwe</p>
 	</div>
 	<div class="col-12 col-md-5 bg-light rounded shadow mx-auto px-sm-5 py-2 px-1 m-1">
-		<form action="/register" method="post">
+		<form th:action="@{users/register}" th:method="post" th:object="${user}">
 			<!-- First Name-->
 			<section class="form-group">
 				<label for="firstName" class="text-dark loginLabel">First Name</label>
 				<input id="firstName"
-					   name="firstName"
-					   class="form-control loginInput"
+					   th:field="*{firstName}"
+					   class="form-control"
 					   type="text"
 					   minlength="3" maxlength="50"
 					   title="Uppercase & Lowercase letters only, no punctuation, numbers, or special characters and between 3 and 50 characters"
@@ -30,8 +30,8 @@
 			<section class="form-group">
 				<label for="lastName" class="text-dark loginLabel">Last Name</label>
 				<input id="lastName"
-					   name="lastName"
-					   class="form-control loginInput"
+					   th:field="*{lastName}"
+					   class="form-control"
 					   type="text"
 					   minlength="3" maxlength="50"
 					   title="Uppercase & Lowercase letters only, no punctuation, numbers, or special characters and between 3 and 50 characters"
@@ -42,7 +42,7 @@
 			<section class="form-group">
 				<label for="username" class="text-dark loginLabel">Username</label>
 				<input id="username"
-					   name="username"
+					   th:field="*{userName}"
 					   class="form-control loginInput"
 					   type="text"
 					   minlength="4" maxlength="15"
@@ -59,7 +59,7 @@
 				<input type="password"
 					   id="password"
 					   class="form-control loginInput"
-					   name="password"
+					   th:field="*{password}"
 					   min="6" maxlength="15"
 					   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
 					   title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
@@ -74,7 +74,7 @@
 				<input type="password"
 					   id="confirm_password"
 					   class="form-control loginInput"
-					   name="confirm_password"
+					   th:field="*{confirm_password}"
 					   min="6" maxlength="15"
 					   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
 					   title="at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
@@ -84,7 +84,7 @@
 			<div class="form-group">
 				<label for="email" class="text-dark loginLabel" >Email</label>
 				<input id="email"
-					   name="email"
+					   th:field="*{email}"
 					   class="form-control loginInput"
 					   type="text"
 					   minlength="6" maxlength="254"
@@ -96,7 +96,7 @@
 			<div class="form-group">
 				<label for="validation_email" class="text-dark loginLabel" >Email</label>
 				<input id="validation_email"
-					   name="validation_email"
+					   th:field="*{validation_email}"
 					   class="form-control loginInput"
 					   type="text"
 					   minlength="6" maxlength="254"
@@ -108,18 +108,19 @@
 			<div class="form-group">
 				<label for="city" class="text-dark loginLabel" >City</label>
 				<input id="city"
-					   name="city"
+					   th:field="*{city}"
 					   class="form-control loginInput"
 					   type="text"
 					   minlength="3" maxlength="250"
 					   pattern="[A-Za-z]{3,250}"
+					   .{8,}
 					   title="Provide a city"
 					   required>
 			</div>
 			<!-- State -->
 			<div class="form-group mt-3">
 				<label for="state" class="text-dark loginLabel" >State</label>
-				<select id="state" name="state">
+				<select id="state" name="state" th:field="*{state}">
 					<option value="AL">Alabama</option>
 					<option value="AK">Alaska</option>
 					<option value="AZ">Arizona</option>
@@ -175,18 +176,19 @@
 			</div>
 			<!-- Import Image file -->
 			<div class="form-group pt-4">
-				<input type="file" id="profileImg" name="profileImg">
+				<input type="file" id="profileImg" th:field="*{profileImg}">
 			</div>
 			<!-- Subscribe -->
 			<div class="form-group pt-4">
 				<label>
-					<input type="checkbox" name="subscribe" id="subscribe"> Subscribe to newsletter
+					<input type="checkbox" th:field="*{subscribe}" id="subscribe"> Subscribe to newsletter
 				</label>
 			</div>
 			<!-- Terms and Agreements -->
 			<div class="form-group pt-4">
 				<label>
-					<input type="checkbox" name="termsAgreement" id="termsAgreement"> I agree to all statements includes in Terms of use
+					<input type="checkbox" th:field="*{termsAgreement}"
+						   id="termsAgreement"> I agree to all statements includes in Terms of use
 				</label>
 			</div>
 			<!-- Submit Button -->
