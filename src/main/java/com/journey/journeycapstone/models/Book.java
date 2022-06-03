@@ -1,5 +1,7 @@
 package com.journey.journeycapstone.models;
 
+import org.springframework.context.annotation.EnableMBeanExport;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -39,6 +41,22 @@ public class Book {
 
     @OneToOne
     private Author author;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+        @JoinTable(
+                name = "book_genre",
+                joinColumns = {@JoinColumn(name = "book_id")},
+                inverseJoinColumns = {@JoinColumn(name = "genre_id")}
+        )
+    private List<Genre> bookGenres;
+
+    public List<Genre> getBookGenres() {
+        return bookGenres;
+    }
+
+    public void setBookGenres(List<Genre> bookGenres) {
+        this.bookGenres = bookGenres;
+    }
 
     public Book(){
     }
