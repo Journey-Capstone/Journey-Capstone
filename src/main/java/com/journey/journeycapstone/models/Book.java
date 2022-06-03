@@ -13,9 +13,12 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private double isbn;
+    private long isbn;
 
     private String title;
+
+    private String author;
+
 
     private long published_date;
 
@@ -40,8 +43,8 @@ public class Book {
     @JoinColumn(name = "book_id")
     private BookList bookList;
 
-    @OneToOne
-    private Author author;
+//    @OneToOne
+//    private Author author;
 
     @ManyToMany(cascade = CascadeType.ALL)
         @JoinTable(
@@ -62,6 +65,14 @@ public class Book {
     public Book(){
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
     public long getId() {
         return id;
     }
@@ -70,7 +81,7 @@ public class Book {
         this.id = id;
     }
 
-    public double getIsbn() {
+    public long getIsbn() {
         return isbn;
     }
 
@@ -102,13 +113,13 @@ public class Book {
         this.bookList = bookList;
     }
 
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
+//    public Author getAuthor() {
+//        return author;
+//    }
+//
+//    public void setAuthor(Author author) {
+//        this.author = author;
+//    }
 
     public long getPublished_date() {
         return published_date;
