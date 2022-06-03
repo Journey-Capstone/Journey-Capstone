@@ -6,13 +6,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/catalog")
+@RequestMapping("/main")
 public class BookController {
 
     @GetMapping
     @ResponseBody
-    public String books(){
-        return "Catalog of books page";
+    public String mainPage(){
+        return "Main page";
+    }
+
+    @GetMapping("/books")
+    @ResponseBody
+    public String singleBook(){
+        return "single book page";
+    }
+
+    @GetMapping("/catalog")
+    @ResponseBody
+    public String catalogPage(){
+        return "this is our catalog page";
     }
 
 

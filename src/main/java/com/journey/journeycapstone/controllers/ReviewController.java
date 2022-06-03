@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/reviews")
 public class ReviewController {
 
-    @GetMapping()
+    @GetMapping
     @ResponseBody
     public String reviews(){
-        return "List of our reviews";
+        return "this is our reviews";
     }
 }
