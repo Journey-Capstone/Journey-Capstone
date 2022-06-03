@@ -21,6 +21,7 @@ public class Book {
 
     private String image;
 
+    @Column(length = 2500)
     private String description;
 
     private long page_count;
@@ -44,7 +45,7 @@ public class Book {
 
     @ManyToMany(cascade = CascadeType.ALL)
         @JoinTable(
-                name = "book_genre",
+                name = "books_genres",
                 joinColumns = {@JoinColumn(name = "book_id")},
                 inverseJoinColumns = {@JoinColumn(name = "genre_id")}
         )
