@@ -15,10 +15,10 @@ public class HomeController {
     }
 
     @GetMapping("/about")
-    @ResponseBody
     public String about(){
-        return "our about page";
+        return "home/about";
     }
+
 
 
 

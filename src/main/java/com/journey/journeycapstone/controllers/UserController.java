@@ -33,7 +33,7 @@ public class UserController {
     }
 
 
-    //When to start hashing.. Also need the dependency
+    //When to start hashing.. --> wait until deployment
 
 //    @PostMapping("/register")
 //    public String saveUser(@ModelAttribute User user){

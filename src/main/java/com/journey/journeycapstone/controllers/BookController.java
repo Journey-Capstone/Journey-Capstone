@@ -10,21 +10,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class BookController {
 
     @GetMapping
-    @ResponseBody
+
     public String mainPage(){
-        return "Main page";
+        return "main/main";
     }
 
     @GetMapping("/books")
-    @ResponseBody
     public String singleBook(){
-        return "single book page";
+        return "main/singleBook";
     }
 
     @GetMapping("/catalog")
-    @ResponseBody
     public String catalogPage(){
-        return "this is our catalog page";
+        return "main/catalog";
     }
 
 
