@@ -13,12 +13,12 @@
 		<p>Leave reviews, rate the book, and explore new bokos that are ahead. so econxt thins is fdf sd   nilnu   rhjt ewir   fasdfad asdfasd j das ad adfjdf adfjwefqwe</p>
 	</div>
 	<div class="col-12 col-md-5 bg-light rounded shadow mx-auto px-sm-5 py-2 px-1 m-1">
-		<form th:action="@{users/register}" th:method="post" th:object="${user}">
+		<form th:action="@{/register}" method="post" th:object="${user}">
 			<!-- First Name-->
 			<section class="form-group">
 				<label for="firstName" class="text-dark loginLabel">First Name</label>
 				<input id="firstName"
-					   th:field="*{firstName}"
+					   th:field="*{first_name}"
 					   class="form-control"
 					   type="text"
 					   minlength="3" maxlength="50"
@@ -30,7 +30,7 @@
 			<section class="form-group">
 				<label for="lastName" class="text-dark loginLabel">Last Name</label>
 				<input id="lastName"
-					   th:field="*{lastName}"
+					   th:field="*{last_name}"
 					   class="form-control"
 					   type="text"
 					   minlength="3" maxlength="50"
@@ -42,7 +42,7 @@
 			<section class="form-group">
 				<label for="username" class="text-dark loginLabel">Username</label>
 				<input id="username"
-					   th:field="*{userName}"
+					   th:field="*{username}"
 					   class="form-control loginInput"
 					   type="text"
 					   minlength="4" maxlength="15"
@@ -74,7 +74,6 @@
 				<input type="password"
 					   id="confirm_password"
 					   class="form-control loginInput"
-					   th:field="*{confirm_password}"
 					   min="6" maxlength="15"
 					   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
 					   title="at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
@@ -96,7 +95,6 @@
 			<div class="form-group">
 				<label for="validation_email" class="text-dark loginLabel" >Email</label>
 				<input id="validation_email"
-					   th:field="*{validation_email}"
 					   class="form-control loginInput"
 					   type="text"
 					   minlength="6" maxlength="254"
@@ -108,19 +106,18 @@
 			<div class="form-group">
 				<label for="city" class="text-dark loginLabel" >City</label>
 				<input id="city"
-					   th:field="*{city}"
+					   th:field="*{City}"
 					   class="form-control loginInput"
 					   type="text"
 					   minlength="3" maxlength="250"
-					   pattern="[A-Za-z]{3,250}"
-					   .{8,}
+
 					   title="Provide a city"
 					   required>
 			</div>
 			<!-- State -->
 			<div class="form-group mt-3">
 				<label for="state" class="text-dark loginLabel" >State</label>
-				<select id="state" name="state" th:field="*{state}">
+				<select id="state" name="state" th:field="*{State}">
 					<option value="AL">Alabama</option>
 					<option value="AK">Alaska</option>
 					<option value="AZ">Arizona</option>
@@ -175,20 +172,20 @@
 				</select>
 			</div>
 			<!-- Import Image file -->
+			<!--			LOOK AT THIS SO YOU DAN ADDDD-->
 			<div class="form-group pt-4">
-				<input type="file" id="profileImg" th:field="*{profileImg}">
+				<input type="file" id="profileImg">
 			</div>
 			<!-- Subscribe -->
 			<div class="form-group pt-4">
 				<label>
-					<input type="checkbox" th:field="*{subscribe}" id="subscribe"> Subscribe to newsletter
+					<input type="checkbox" th:field="*{is_subscribed}" id="subscribe"> Subscribe to newsletter
 				</label>
 			</div>
 			<!-- Terms and Agreements -->
 			<div class="form-group pt-4">
 				<label>
-					<input type="checkbox" th:field="*{termsAgreement}"
-						   id="termsAgreement"> I agree to all statements includes in Terms of use
+					<input type="checkbox" id="termsAgreement"> I agree to all statements includes in Terms of use
 				</label>
 			</div>
 			<!-- Submit Button -->
