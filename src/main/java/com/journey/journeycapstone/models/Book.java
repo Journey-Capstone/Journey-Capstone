@@ -13,7 +13,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private long isbn;
+    private double isbn;
 
     private String title;
 
@@ -70,7 +70,7 @@ public class Book {
         this.id = id;
     }
 
-    public long getIsbn() {
+    public double getIsbn() {
         return isbn;
     }
 
