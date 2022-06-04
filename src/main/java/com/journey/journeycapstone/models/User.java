@@ -29,6 +29,11 @@ public class User {
     @Column(nullable = false)
     private boolean is_subscribed;
 
+
+    //with favorite Genre the nullable needed to be true,
+    // because in the beginning when the user is creating a User
+    // they are not asked for genre so this need to be null until
+    // user is in settings.
 //    @Column(nullable = false, length = 30)
     @Column(nullable = true, length = 30)
     private String favorite_genre;
