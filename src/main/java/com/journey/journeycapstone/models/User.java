@@ -29,7 +29,8 @@ public class User {
     @Column(nullable = false)
     private boolean is_subscribed;
 
-    @Column(nullable = false, length = 30)
+//    @Column(nullable = false, length = 30)
+    @Column(nullable = true, length = 30)
     private String favorite_genre;
 
     @Column(length = 40)
