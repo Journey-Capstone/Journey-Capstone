@@ -17,6 +17,11 @@ import java.util.Properties;
 public class UserController {
     private UserRepository userDao;
 
+    //Added this constructor
+    // needed this to be added.
+    public UserController(UserRepository userDao){
+        this.userDao = userDao;
+    }
 
 
     @GetMapping("/profile")
@@ -33,7 +38,11 @@ public class UserController {
 
     @PostMapping("/register")
     public String registerSubmit(@ModelAttribute User user, Model model){
-        model.addAttribute("user", user);
+        // This is what was added to get it to work
+        // needed to save the user with the userDoa
+        User userNew = userDao.save(user);
+        // Calling the new variable to be added
+        model.addAttribute("user", userNew);
         return "redirect:/login";
     }
 
