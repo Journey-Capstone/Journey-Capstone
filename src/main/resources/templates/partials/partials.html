@@ -12,32 +12,40 @@
 	<nav th:fragment="navbar"  class="navbar container-fluid bg-light">
 		<div class="container d-flex justify-content-center">
 		<div class="col-6" >
-			<a class="navbar-brand" href="/home">
-				<img src="./images/book_logo.png" alt="" width="30" height="24">
+			<a class="navbar-brand" href="/">
+				<img src="./images/book_logo.png" alt="" width="50" height="40">
 			</a>
 		</div>
 		<div class="d-flex justify-content-end col-6 align-items-center">
-			<a href="home/about">About</a>
+			<a href="/about">About</a>
 			<a href="/login" class="m-2"><button class="btn btn-outline-primary">Login</button></a>
 			<a href="/register" class="m-2"><button class="btn btn-primary">Register</button></a>
 		</div>
 		</div>
 	</nav>
-	<!--Non-Logged in user Navbar-->
 
-	<nav th:fragment="navlogin">
-		<article>
-			<section id="search" class="results">
-				<div class="flex">
-					<input
-							id="search-box"
-							class="search-box"
-							placeholder="Search Title or Author"
-							aria-label="Search books"
-					/>
+	<!--Logged in user Navbar-->
+	<nav th:fragment="navlogin" class="navbar navbar-expand-lg bg-light">
+		<div class="d-flex justify-content-around col-3" >
+			<a class="navbar-brand" href="/">
+				<img src="./images/book_logo.png" alt="" width="50" height="40">
+			</a>
+		</div>
+		<section id="search" class="results d-flex justify-content-around col-3 align-items-center">
+			<div class="flex">
+				<input id="search-box" class="search-box" placeholder="Search Genre, Title, Author"/>
+				<div class="list-book search">
+					<div class="dropdown">Books</div>
 				</div>
-			</section>
-		</article>
+			</div>
+		</section>
+		<div class="d-flex justify-content-evenly col-6">
+			<a href="/main">Home</a>
+			<a href="/catalog">Catalog</a>
+			<a href="/about">About</a>
+			<a href="/profile">Profile</a>
+			<a href="/login">Logout</a>
+		</div>
 	</nav>
 
 
@@ -72,7 +80,7 @@
 		let bookContainer = document.querySelector(`.${subject}`);
 		bookContainer.innerHTML = `<div class='prompt'><div class="loader"></div></div>`;
 		const data = await getBooks(
-			`subject:${subject}&startIndex=${startIndex}&maxResults=6`
+			`subject:${subject}&startIndex=${startIndex}&maxResults=9`
 		);
 		if (data.error) {
 			bookContainer.innerHTML = `<div class='prompt'>ツ Limit exceeded! Try after some time</div>`;
@@ -165,7 +173,16 @@
 			document.getElementById(`${subject}-prev`).style.display = "inline-flex";
 			showBooks(subject, startIndex);
 		}
+	//	Modal for search result popup-- FROM BOOTSTRAP NOT FUNCTIONAL need to work on this. -YR
+		const myModal = document.getElementById('myModal')
+		const myInput = document.getElementById('myInput')
+
+		myModal.addEventListener('shown.bs.modal', () => {
+			myInput.focus()
+		})
 	};
+
+
 </script>
 
 </body>
