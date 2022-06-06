@@ -80,73 +80,33 @@
 		return imageLinks.thumbnail;
 	};
 
-
-	//If search results are out of scope user will be prompted with error message. If no error
-	const showBooks = async (subject, startIndex = 0) => {
-		let bookContainer = document.querySelector(`.${subject}`);
-		bookContainer.innerHTML = `<div class='prompt'><div class="loader"></div></div>`;
-		const data = await getBooks(
-			`subject:${subject}&startIndex=${startIndex}&maxResults=6`
-		);
-		if (data.error) {
-			bookContainer.innerHTML = `<div class='prompt'>ツ Limit exceeded! Try after some time</div>`;
-		} else if (data.totalItems == 0) {
-			bookContainer.innerHTML = `<div class='prompt'>ツ No results, try a different term!</div>`;
-		} else if (data.totalItems == undefined) {
-			bookContainer.innerHTML = `<div class='prompt'>ツ Network problem!</div>`;
-		} else if (!data.items || data.items.length == 0) {
-			bookContainer.innerHTML = `<div class='prompt'>ツ There is no more result!</div>`;
-		} else {
-			bookContainer.innerHTML = data.items;
-			bookContainer.innerHTML = data.items
-				.map(
-					({ volumeInfo }) =>
-						`<div class='book' style='background: linear-gradient(` +
-						getRandomColor() +
-						`, rgba(0, 0, 0, 0));'><a href='${volumeInfo.previewLink}' target='_blank'><img class='thumbnail' src='` +
-						getThumbnail(volumeInfo) +
-						`' alt='cover'></a><div class='book-info'><h3 class='book-title'><a href='${volumeInfo.previewLink}' target='_blank'>${volumeInfo.title}</a></h3><div class='book-authors' onclick='updateFilter(this,"author");'>${volumeInfo.authors}</div><div class='info' onclick='updateFilter(this,"subject");' style='background-color: ` +
-						getRandomColor() +
-						`;'>` +
-						//If category returns undefined we have it set to show "others" instead
-						(volumeInfo.categories === undefined
-							? "Others"
-							: volumeInfo.categories) +
-						`</div>
-</div>
-</div>`).join("");
-		}
-	};
 	const ListBook = async () => {
 		if (searchBooks.value != "") {
-			//************* bookContainer.style.display = ""; --possibly tie in the modal below? ***************************
 			bookContainer.innerHTML = `<div class='prompt'><div class="loader"></div></div>`;
 			const data = await getBooks(`${searchBooks.value}&maxResults=6`);
 			if (data.error) {
-				bookContainer.innerHTML = `<div class='prompt'>ツ Limit exceeded! Try after some time</div>`;
+				bookContainer.innerHTML = `<div class='prompt'>Limit exceeded! Try after some time</div>`;
 			} else if (data.totalItems == 0) {
-				bookContainer.innerHTML = `<div class='prompt'>ツ No results, try a different term!</div>`;
+				bookContainer.innerHTML = `<div class='prompt'>No results, try a different term!</div>`;
 			} else if (data.totalItems == undefined) {
-				bookContainer.innerHTML = `<div class='prompt'>ツ Network problem!</div>`;
+				bookContainer.innerHTML = `<div class='prompt'>Network problem!</div>`;
 			} else {
 
-				//book data and style to show on page
+				//book data and style to show on page allows books to be clickable and go to preview link (google books website for now)
 				bookContainer.innerHTML = data.items.map(({volumeInfo}) =>
 					`<div class='book' style='background-color: lightblue'>
 							<a href='${volumeInfo.previewLink}' target='_blank'>
 							<img class='thumbnail' src='` + getThumbnail(volumeInfo) + `' alt='cover'></a>
-
-
 							<div class='book-info'>
 							<h3 class='book-title'>
 							<!--allows user to go to the preview link on google books api-->
 							<a href='${volumeInfo.previewLink}' target='_blank'>${volumeInfo.title}</a>
 							</h3>
 
-							<div class='book-authors' onclick='updateFilter(this,"author");'>${volumeInfo.authors}</div>
+							<div class='book-authors'>${volumeInfo.authors}</div>
 
-							<div class='info' onclick='updateFilter(this,"subject");' style='background-color: white'>` + (volumeInfo.categories === undefined ? "Others" : volumeInfo.categories) +
-					`</div>
+							<div class='info'>` + (volumeInfo.categories === undefined ? "Other" : volumeInfo.categories) +
+					`<br></div>
 </div>
 </div>`).join("");
 			}
@@ -186,12 +146,12 @@
 			showBooks(subject, startIndex);
 		}
 	//*********	Modal for search result popup-- FROM BOOTSTRAP NOT FUNCTIONAL need to work on this. *********
-		const myModal = document.getElementById('myModal')
-		const myInput = document.getElementById('myInput')
-
-		myModal.addEventListener('shown.bs.modal', () => {
-			myInput.focus()
-		})
+	// 	const myModal = document.getElementById('myModal')
+	// 	const myInput = document.getElementById('myInput')
+	//
+	// 	myModal.addEventListener('shown.bs.modal', () => {
+	// 		myInput.focus()
+	// 	})
 	};
 
 
@@ -200,7 +160,11 @@
 </body>
 </html>
 
-<!--Resources-->
+									<!--Cool Options-->
+<!--Need to see if we can integrate the preview link from google books into our site-->
+<!--Does Google Books have "Best books" listings?-->
+
+							<!--Resources-->
 <!--Google Books API How to: https://www.youtube.com/watch?v=uaMMkaa-P_A-->
 <!--Part 1- AJAX/JSON https://www.youtube.com/watch?v=uI_UP0pgsDE-->
 <!--Part 2 Ajax/JSON Request https://www.youtube.com/watch?v=4LdTe90dqVE-->
