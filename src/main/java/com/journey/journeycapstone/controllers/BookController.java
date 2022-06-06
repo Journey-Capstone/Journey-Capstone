@@ -6,11 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/main")
+
 public class BookController {
 
-    @GetMapping
-
+    @GetMapping("/main")
     public String mainPage(){
         return "main/main";
     }

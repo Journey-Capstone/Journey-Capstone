@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/reviews")
 public class ReviewController {
 
-    @GetMapping
+    @GetMapping("/reviews")
     public String reviews(){
         return "reviews/reviews";
     }
