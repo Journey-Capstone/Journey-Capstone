@@ -8,9 +8,11 @@ public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
-    private String title;
+    private String bookTitle;
+
+    private String reviewTitle;
 
     private long rating;
 
@@ -20,28 +22,44 @@ public class Review {
     @JoinColumn(name = "user_id")
     private User user;
 
-//    @ManyToOne
-//    @JoinColumn(name = "book_id")
-//    private Book book;
-
     public Review(){
 
     }
 
-    public long getId() {
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public void setBookTitle(String book_title) {
+        this.bookTitle = book_title;
+    }
+
+    public String getReviewTitle() {
+        return reviewTitle;
+    }
+
+    public void setReviewTitle(String reviewTitle) {
+        this.reviewTitle = reviewTitle;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+//    @ManyToOne
+//    @JoinColumn(name = "book_id")
+//    private Book book;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public long getRating() {
