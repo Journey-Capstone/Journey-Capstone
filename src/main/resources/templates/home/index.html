@@ -7,9 +7,65 @@
 <body>
 <header th:replace="partials/partials.html :: navbar"></header>
 
-<div id="intro">
-	<div class="cover"></div>
-</div>
+<main id="intro" class=" d-flex align-items-center text-white">
+	<div class="cover w-100 h-100"></div>
+	<div class="col-md-6 col-0"></div>
+	<div class="col-md-6 p-5 col-12">
+		<h1 class="">Discover your Journey</h1>
+		<p>Discover your next Journey through the world of endless imagination.</p>
+		<a class="btn btn-primary" href="#" role="button">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+	</div>
+</main>
+
+
+<section class=" w-100 container-fluid p-5">
+	<div class="text-center container pt-5">
+		<small class="text-primary p-0 m-0">Introduction</small>
+		<h2><span class="fw-light">About</span> <strong>journey</strong></h2>
+		<p class="mt-4 mx-5 indexPara">
+			Introduce yourself to the works of your favorite authors’ story-telling, or entice yourself through the opinions of other members.
+			Browse by genre, author, title, customized recommendations, or follow the paths that other members have taken, based off of their reviews.
+			Write your own reviews, to help guide others through their own Journey.  List your favorite reads, your favorite book, and your
+			list of books you wish to read.  You also have the option to purchase your selected book through our third party.  Any day is a
+			fine day to take a Journey, let us help you find your way!
+		</p>
+		<a class="btn btn-primary my-5" href="#" role="button">Join the Community <i class="fa-solid fa-arrow-right"></i></a>
+	</div>
+</section>
+
+<section class="d-flex flex-column w-100 container text-center my-5">
+	<small class="text-primary p-0 m-0">Services</small>
+	<h2><span class="fw-light">We're</span> <strong>Offering</strong></h2>
+	<div class="card-group my-5">
+		<div class="card">
+			<img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" width="140" height="260" class="card-img-top" alt="books">
+			<div class="card-body">
+				<h5 class="card-title">Browse By Genre</h5>
+				<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			</div>
+		</div>
+		<div class="card mx-1">
+			<img src="https://images.unsplash.com/photo-1592841665194-e62ef17a37cd?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" width="140" height="260" class="card-img-top" alt="books">
+			<div class="card-body">
+				<h5 class="card-title">Leave Personal Reviews</h5>
+				<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			</div>
+		</div>
+		<div class="card">
+			<img src="https://images.unsplash.com/photo-1487724448953-a9d9963d71ae?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="man using smartphone while using headphones" width="140" height="260" class="card-img-top">
+			<div class="card-body">
+				<h5 class="card-title">Find Common Users</h5>
+				<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="text-center my-5">
+	<small class="text-primary p-0 m-0">Join</small>
+	<h2><span class="fw-light">Everyday</span> <strong>Reviews</strong></h2>
+</section>
+
 
 <footer th:replace="partials/partials.html :: footer"></footer>
 

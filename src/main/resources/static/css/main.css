@@ -1,13 +1,15 @@
-cover {
-    background: linear-gradient(244.83deg, #000000 -21.72%, rgba(217, 217, 217, 0) 94.28%); width:100vw; height:450px;
+.cover {
+    background: linear-gradient(244.83deg, #000000 -21.72%, rgb(217, 217, 217) 94.28%); width:100vw; height:450px;
     position: absolute
 }
 
 #intro{
     background-image: url("../images/library.jpg");
     height: 80vh;
+    opacity: .25;
     background-size: cover;
 }
+
 footer{
     position: fixed;
     left: 0;
