@@ -15,10 +15,5 @@ public class AuthenticationController {
             return "users/login";
         }
 
-        @PostMapping("/login")
-        public String loginSubmit(@ModelAttribute User user, Model model){
-
-        return "/profile";
-        }
 
 }

@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="partials/partials.html :: head ('Welcome to journey')">
+<head th:replace="partials/partials.html :: head ('Login')">
 
-	<title>Home</title>
+	<title>Login</title>
 </head>
 <body>
 <header th:replace="partials/partials.html :: navbar"></header>
-<h1>Login Page</h1>
 
-<div class="container">
-	<label for="username"><b>Username</b></label>
-	<input type="text" placeholder="Enter Username" name="uname" required>
+<div class="col-12 col-md-5 bg-light rounded shadow mx-auto px-sm-5 py-2 px-1 m-1 position-absolute top-50 start-50 translate-middle">
+	<!-- Start of the Form    -->
 
-	<label for="password"><b>Password</b></label>
-	<input type="password" placeholder="Enter Password" name="psw" required>
-
-	<button type="submit">Login</button>
-
+<section class="form-group">
+	<h2>Sign In</h2>
+	<label for="username" class="text-dark loginLabel">Username</label>
+	<input id="username"
+	       class="form-control loginInput"
+	       type="text"
+	       minlength="4" maxlength="15"
+	       pattern="^[a-zA-Z][a-zA-Z0-9-_.]{4,15}$"
+	       required>
+</section>
+<div class="form-group">
+	<label for="password" class="loginLabel">Password</label>
+	<input type="password"
+	       id="password"
+	       class="form-control loginInput"
+	       min="6" maxlength="15"
+	       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+	       title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
+	       required>
+</div>
+	<button type="button" class="btn btn-primary my-2">Log In</button>
+	<p class="text-secondary">
+		<small>Need an account? <a href="/register"> Join our community!</a> </small>
+	</p>
+	</form>
 </div>
 
-<div class="container" style="background-color:#f1f1f1">
 
-	<span class="psw">Forgot <a href="#">password?</a></span>
-</div>
-</form>
 
+<script th:replace="partials/partials.html :: bootstrap-js"></script>
+<script th:replace="partials/partials.html :: jquery"></script>
 </body>
 </html>
