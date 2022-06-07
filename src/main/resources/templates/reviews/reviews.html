@@ -8,6 +8,14 @@
 <header th:replace="partials/partials.html :: navlogin"></header>
 
 <h1>Reviews Page</h1>
+<!-- review.xyz must reference the model naming convention -->
+<ul>
+	<li th:each="review : ${reviews}">
+		<h2 th:text="${review.reviewTitle}"></h2>
+		<h3 th:text="${review.rating}"></h3>
+		<p th:text="${review.description}"></p>
+	</li>
+</ul>
 
 <footer th:replace="partials/partials.html :: footer"></footer>
 

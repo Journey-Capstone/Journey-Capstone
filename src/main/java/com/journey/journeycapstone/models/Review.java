@@ -23,7 +23,21 @@ public class Review {
     private User user;
 
     public Review(){
+    }
 
+    public Review(Long id,String bookTitle, String reviewTitle, Long rating, String description){
+        this.id = id;
+        this.bookTitle = bookTitle;
+        this.reviewTitle = reviewTitle;
+        this.rating = rating;
+        this.description = description;
+    }
+
+    public Review(String bookTitle, String reviewTitle, Long rating, String description){
+        this.bookTitle = bookTitle;
+        this.reviewTitle = reviewTitle;
+        this.rating = rating;
+        this.description = description;
     }
 
     public String getBookTitle() {
