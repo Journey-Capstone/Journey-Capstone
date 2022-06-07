@@ -7,6 +7,16 @@ import java.util.List;
 @Table(name = "users")
 public class User {
 
+//    Copy Constructor for authentication process
+//    used in order to fulfill the contract defined by the interfaces in the security package.
+    public User(User copy){
+        id = copy.id; //Super important!!!!
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
+    }
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -23,7 +33,7 @@ public class User {
     @Column(nullable = false, length = 100)
     private String email;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 200)
     private String password;
 
     @Column(nullable = false)
