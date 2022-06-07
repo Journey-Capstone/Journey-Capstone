@@ -1,14 +1,27 @@
-.cover {
-    background: linear-gradient(244.83deg, #000000 -21.72%, rgb(217, 217, 217) 94.28%); width:100vw; height:450px;
-    position: absolute
-}
-
-#intro{
+*{margin: 0;padding: 0;box-sizing: border-box;}
+/*The Index Main Section*/
+#introSection{
+    height: 75vh;
     background-image: url("../images/library.jpg");
-    height: 80vh;
-    opacity: .25;
     background-size: cover;
 }
+/*The Index Main header*/
+.introHeading{
+    font-weight: bolder;
+    font-size: 42px;
+}
+/*The Index Main paragraph*/
+.indexPara, .introPara{
+    font-size: 18px;
+}
+.introArrow{
+    margin-top: -60px;
+    width: 30px;
+    height: auto;
+    z-index: 10;
+}
+
+
 
 footer{
     position: fixed;
