@@ -45,7 +45,9 @@
 			<a href="/catalog">Catalog</a>
 			<a href="/reviews">Reviews</a>
 			<a href="/profile">Profile</a>
-			<a href="/login">Logout</a>
+			<form th:action="@{/logout}" th:method="post">
+				<button class="btn-link btn">Logout</button>
+			</form>
 		</div>
 	</nav>
 
@@ -188,6 +190,8 @@
 				});
 	});
 </script>
+
+
 
 </body>
 </html>
