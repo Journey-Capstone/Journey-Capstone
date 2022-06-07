@@ -4,5 +4,7 @@ import com.journey.journeycapstone.models.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ReviewRepository extends JpaRepository<Review, Long>{
-//    Review findReviewBy(String book_title);
+    Review findReviewByBookTitle(String book_title);
+
+    Review findReviewByReviewTitle(String review_title);
 }
