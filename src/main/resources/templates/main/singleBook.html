@@ -33,6 +33,8 @@
 		background:#F90;
 		color:#FFF;
 	}
+	#reviewForm{
+	}
 </style>
 </head>
 <body>
@@ -40,7 +42,7 @@
 <h1>This is our single book page</h1>
 
 <!--th:field must match Model name-->
-<form th:action="@{/books}" method="post" th:object="${review}">
+<form th:action="@{/books}" class="w-50 mx-auto border p-3 shadow rounded" id="reviewForm" method="post" th:object="${review}">
 	<section class="form-group">
 		<label for="review_title" class="text-dark">Title:</label>
 		<input id="review_title"
@@ -55,14 +57,10 @@
 	<!--Description-->
 	<section class="form-group">
 		<label for="description" class="text-dark">Review:</label>
-		<input id="description"
+		<textarea id="description"
 			   th:field="*{description}"
-			   class="form-control"
-			   type="text"
-			   minlength="3" maxlength="255"
-			   title="Minimum title length 3 characters, maximum length 255"
-			   pattern="{3,255}"
-			   required>
+			   class="form-control" required>
+		</textarea>
 	</section>
 	<!-- Rating-->
 	<section class="form-group">
@@ -75,6 +73,7 @@
 			<span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
 			<span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
 		</div>
+	</section>
 
 	<input type="submit" class=" w-100 loginButton btn btn-primary btn-block mt-3">
 </form>
