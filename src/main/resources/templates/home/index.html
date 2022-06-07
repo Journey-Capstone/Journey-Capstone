@@ -1,15 +1,261 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head th:replace="partials/partials.html :: head ('Welcome to journey')">
-
-	<title>Home</title>
 </head>
-<body>
+<body class="pb-5">
 <header th:replace="partials/partials.html :: navbar"></header>
 
-<div id="intro">
-	<div class="cover"></div>
+<main id="introSection" class="d-flex align-items-center text-white position-relative">
+	<div class="bg-dark h-100 w-100 opacity-25 position-absolute"></div>
+	<div class="position-relative container text-lg-end text-center p-3">
+		<h1 class="introHeading z-index-5">Discover your Journey</h1>
+		<p class="introPara">Discover your next Journey through the world of endless imagination.</p>
+		<a class="btn  btn-primary" href="#" role="button">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+	</div>
+</main>
+<div class="d-none d-sm-flex justify-content-center text-light">
+	<i class="fa-solid introArrow fa-circle-arrow-down"></i>
 </div>
+
+
+
+<section class=" w-100 container-fluid p-sm-5 p-0">
+	<div class="text-center container pt-5">
+		<small class="text-primary p-0 m-0">Introduction</small>
+		<h2><span class="fw-light">About</span> <strong>journey</strong></h2>
+		<p class="mt-4 indexPara  mx-auto">
+			Introduce yourself to the works of your favorite authors’ story-telling, or entice yourself through the opinions of other members.
+			Browse by genre, author, title, customized recommendations, or follow the paths that other members have taken, based off of their reviews.
+			Write your own reviews, to help guide others through their own Journey.  List your favorite reads, your favorite book, and your
+			list of books you wish to read.  You also have the option to purchase your selected book through our third party.  Any day is a
+			fine day to take a Journey, let us help you find your way!
+		</p>
+		<a class="btn btn-primary my-5" href="#" role="button">Join the Community <i class="fa-solid fa-arrow-right"></i></a>
+	</div>
+</section>
+
+<section class="d-flex flex-column w-100 container text-center my-5">
+	<small class="text-primary p-0 m-0">Services</small>
+	<h2><span class="fw-light">We're</span> <strong>Offering</strong></h2>
+	<div class="card-group my-5">
+		<div class="card">
+			<img src="../images/indexOffering_01.jpg"  width="100%" height="220px"  alt="books">
+			<div class="card-body">
+				<h5 class="card-title">Browse By Genre</h5>
+				<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			</div>
+		</div>
+		<div class="card mx-1">
+			<img src="/images/indexOffering_02.jpg" width="100%" height="220px"  alt="books">
+			<div class="card-body">
+				<h5 class="card-title">Leave Personal Reviews</h5>
+				<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			</div>
+		</div>
+		<div class="card">
+			<img src="/images/indexOffering_03.jpg"  width="100%" height="220px" alt="books">
+			<div class="card-body">
+				<h5 class="card-title">Find Common Users</h5>
+				<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="text-center my-5 container my-5">
+	<p><small class="text-primary p-0 m-0">Community</small></p>
+	<h2 class="fw-light">Everyday <strong class="fw-bolder">Reviews</strong></h2>
+	<i class="fa-solid fa-left-long col-2"></i><small class="text-secondary">Scroll</small><i class=" col-2 fa-solid fa-right-long"></i>
+	<div class="row d-flex flex-nowrap overflow-scroll">
+		<!-- Card One -->
+		<div class="col-md-3 col mb-3">
+			<!-- Start of Card  -->
+			<div class="card m-2 shadow  w-100 w-md-25">
+				<!-- HEADER -->
+				<div class="d-flex w-100">
+					<!--  User Image    -->
+					<div class="bg-dark rounded-circle shadow m-3" style="width:32px;height:32px;"></div>
+					<!-- Username -->
+					<p class="pt-3">username</p>
+				</div>
+				<!--Book Section -->
+				<div class="d-flex justify-content-center">
+					<img src="..." class="card-img-top rounded" style="height:120px;width:80px;border:2px solid black;">
+				</div>
+				<!-- Stars -->
+				<div class="text-center my-2">
+					<!-- To display checked star rating icons -->
+					<i class="fa-solid fa-star" value="1"></i>
+					<i class="fa-solid fa-star" value="2"></i>
+					<i class="fa-solid fa-star" value="3"></i>
+					<i class="fa-solid fa-star" value="4"></i>
+					<i class="fa-solid fa-star" value="5"></i>
+					<span> 3</span>
+				</div>
+				<!--  Card Body  -->
+				<div class="card-body">
+					<h5 class="card-title">Review Title</h5>
+					<p class="card-text" style="font-size:12px;">Some quick example text to build on the card title and make up the bulk of the card's content...</p>
+				</div>
+				<!-- FOOTER -->
+				<div class="card-footer">
+					<small class="text-muted">01/01/2011</small>
+				</div>
+			</div>
+			<!-- End of Card --->
+		</div>
+		<!-- Card One -->
+		<div class="col-md-3 col mb-3">
+			<!-- Start of Card  -->
+			<div class="card m-2 shadow  w-100 w-md-25">
+				<!-- HEADER -->
+				<div class="d-flex w-100">
+					<!--  User Image    -->
+					<div class="bg-dark rounded-circle shadow m-3" style="width:32px;height:32px;"></div>
+					<!-- Username -->
+					<p class="pt-3">username</p>
+				</div>
+				<!--Book Section -->
+				<div class="d-flex justify-content-center">
+					<img src="..." class="card-img-top rounded" style="height:120px;width:80px;border:2px solid black;">
+				</div>
+				<!-- Stars -->
+				<div class="text-center my-2">
+					<!-- To display checked star rating icons -->
+					<i class="fa-solid fa-star" value="1"></i>
+					<i class="fa-solid fa-star" value="2"></i>
+					<i class="fa-solid fa-star" value="3"></i>
+					<i class="fa-solid fa-star" value="4"></i>
+					<i class="fa-solid fa-star" value="5"></i>
+					<span> 3</span>
+				</div>
+				<!--  Card Body  -->
+				<div class="card-body">
+					<h5 class="card-title">Review Title</h5>
+					<p class="card-text" style="font-size:12px;">Some quick example text to build on the card title and make up the bulk of the card's content...</p>
+				</div>
+				<!-- FOOTER -->
+				<div class="card-footer">
+					<small class="text-muted">01/01/2011</small>
+				</div>
+			</div>
+			<!-- End of Card --->
+		</div>
+		<!-- Card One -->
+		<div class="col-md-3 col mb-3">
+			<!-- Start of Card  -->
+			<div class="card m-2 shadow  w-100 w-md-25">
+				<!-- HEADER -->
+				<div class="d-flex w-100">
+					<!--  User Image    -->
+					<div class="bg-dark rounded-circle shadow m-3" style="width:32px;height:32px;"></div>
+					<!-- Username -->
+					<p class="pt-3">username</p>
+				</div>
+				<!--Book Section -->
+				<div class="d-flex justify-content-center">
+					<img src="..." class="card-img-top rounded" style="height:120px;width:80px;border:2px solid black;">
+				</div>
+				<!-- Stars -->
+				<div class="text-center my-2">
+					<!-- To display checked star rating icons -->
+					<i class="fa-solid fa-star" value="1"></i>
+					<i class="fa-solid fa-star" value="2"></i>
+					<i class="fa-solid fa-star" value="3"></i>
+					<i class="fa-solid fa-star" value="4"></i>
+					<i class="fa-solid fa-star" value="5"></i>
+					<span> 3</span>
+				</div>
+				<!--  Card Body  -->
+				<div class="card-body">
+					<h5 class="card-title">Review Title</h5>
+					<p class="card-text" style="font-size:12px;">Some quick example text to build on the card title and make up the bulk of the card's content...</p>
+				</div>
+				<!-- FOOTER -->
+				<div class="card-footer">
+					<small class="text-muted">01/01/2011</small>
+				</div>
+			</div>
+			<!-- End of Card --->
+		</div>
+		<!-- Card One -->
+		<div class="col-md-3 col mb-3">
+			<!-- Start of Card  -->
+			<div class="card m-2 shadow  w-100 w-md-25">
+				<!-- HEADER -->
+				<div class="d-flex w-100">
+					<!--  User Image    -->
+					<div class="bg-dark rounded-circle shadow m-3" style="width:32px;height:32px;"></div>
+					<!-- Username -->
+					<p class="pt-3">username</p>
+				</div>
+				<!--Book Section -->
+				<div class="d-flex justify-content-center">
+					<img src="..." class="card-img-top rounded" style="height:120px;width:80px;border:2px solid black;">
+				</div>
+				<!-- Stars -->
+				<div class="text-center my-2">
+					<!-- To display checked star rating icons -->
+					<i class="fa-solid fa-star" value="1"></i>
+					<i class="fa-solid fa-star" value="2"></i>
+					<i class="fa-solid fa-star" value="3"></i>
+					<i class="fa-solid fa-star" value="4"></i>
+					<i class="fa-solid fa-star" value="5"></i>
+					<span> 3</span>
+				</div>
+				<!--  Card Body  -->
+				<div class="card-body">
+					<h5 class="card-title">Review Title</h5>
+					<p class="card-text" style="font-size:12px;">Some quick example text to build on the card title and make up the bulk of the card's content...</p>
+				</div>
+				<!-- FOOTER -->
+				<div class="card-footer">
+					<small class="text-muted">01/01/2011</small>
+				</div>
+			</div>
+			<!-- End of Card --->
+		</div>
+		<!-- Card One -->
+		<div class="col-md-3 col mb-3">
+			<!-- Start of Card  -->
+			<div class="card m-2 shadow  w-100 w-md-25">
+				<!-- HEADER -->
+				<div class="d-flex w-100">
+					<!--  User Image    -->
+					<div class="bg-dark rounded-circle shadow m-3" style="width:32px;height:32px;"></div>
+					<!-- Username -->
+					<p class="pt-3">username</p>
+				</div>
+				<!--Book Section -->
+				<div class="d-flex justify-content-center">
+					<img src="..." class="card-img-top rounded" style="height:120px;width:80px;border:2px solid black;">
+				</div>
+				<!-- Stars -->
+				<div class="text-center my-2">
+					<!-- To display checked star rating icons -->
+					<i class="fa-solid fa-star" value="1"></i>
+					<i class="fa-solid fa-star" value="2"></i>
+					<i class="fa-solid fa-star" value="3"></i>
+					<i class="fa-solid fa-star" value="4"></i>
+					<i class="fa-solid fa-star" value="5"></i>
+					<span> 3</span>
+				</div>
+				<!--  Card Body  -->
+				<div class="card-body">
+					<h5 class="card-title">Review Title</h5>
+					<p class="card-text" style="font-size:12px;">Some quick example text to build on the card title and make up the bulk of the card's content...</p>
+				</div>
+				<!-- FOOTER -->
+				<div class="card-footer">
+					<small class="text-muted">01/01/2011</small>
+				</div>
+			</div>
+			<!-- End of Card --->
+		</div>
+	</div>
+</section>
+
+
 
 <footer th:replace="partials/partials.html :: footer"></footer>
 

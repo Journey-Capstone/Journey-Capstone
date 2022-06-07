@@ -1,3 +1,5 @@
+DROP DATABASE journey_db;
+
 CREATE DATABASE IF NOT EXISTS journey_db;
 
 
