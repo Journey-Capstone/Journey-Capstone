@@ -22,7 +22,8 @@ public class BookController {
 
 
     @GetMapping("/main")
-    public String mainPage(){
+    public String mainPage(Model model){
+        model.addAttribute("reviews", reviewDao.findAll());
         return "main/main";
     }
 
