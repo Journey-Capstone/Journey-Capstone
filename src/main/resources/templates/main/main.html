@@ -14,16 +14,15 @@
 </div>
 
 
-<a href="/catalog"><button type="button" class="btn btn-outline-secondary">View all genres</button></a>
-
+<!-- Reviews shown in cards -->
 <section class="text-center my-5 pb-3 container-fluid my-5">
 	<p><small class="text-primary p-0 m-0">Community</small></p>
 	<h2 class="fw-light">Everyday <strong class="fw-bolder">Reviews</strong></h2>
 	<i class="fa-solid fa-left-long col-2"></i><small class="text-secondary">Scroll</small><i class=" col-2 fa-solid fa-right-long"></i>
 	<!--User Review Container	-->
-	<div class="row d-flex flex-nowrap container overflow-scroll mx-auto" th:each="review : ${reviews}">
+	<div class="row d-flex flex-nowrap container overflow-scroll mx-auto">
 		<!-- Card One -->
-		<div class="col-md-3 col mb-3 wholeCard">
+		<div class="col-md-3 col mb-3 wholeCard" th:each="review : ${reviews}">
 			<!-- Start of Card  -->
 			<div class="card m-2 shadow  w-100 w-md-25">
 				<!-- HEADER -->
@@ -95,6 +94,40 @@
 		</div>
 	</div>
 </section>
+<!-- Reviews shown in cards -->
+
+<a href="/catalog"><button type="button" class="btn btn-outline-secondary">View all genres</button></a>
+<div class="row d-flex flex-nowrap container overflow-scroll mx-auto">
+<div class="card text-center" style="width: 18rem;">
+	<div class="card-body">
+		<h5 class="card-title">Fiction</h5>
+		<a href="/catalog" class="btn btn-primary">Find fiction books!</a>
+	</div>
+</div>
+
+<div class="card text-center" style="width: 18rem;">
+	<div class="card-body">
+		<h5 class="card-title">Fantasy</h5>
+		<a href="/catalog" class="btn btn-primary">Find fantasy books!</a>
+	</div>
+</div>
+
+<div class="card text-center" style="width: 18rem;">
+	<div class="card-body">
+		<h5 class="card-title">Sci-Fi</h5>
+		<a href="/catalog" class="btn btn-primary">Find sci-fi books!</a>
+	</div>
+</div>
+
+<div class="card text-center" style="width: 18rem;">
+	<div class="card-body">
+		<h5 class="card-title">History</h5>
+		<a href="/catalog" class="btn btn-primary">Find history books!</a>
+	</div>
+</div>
+</div>
+
+
 
 <footer th:replace="partials/partials.html :: footer"></footer>
 
