@@ -64,10 +64,6 @@ public class Review {
         this.user = user;
     }
 
-//    @ManyToOne
-//    @JoinColumn(name = "book_id")
-//    private Book book;
-
     public Long getId() {
         return id;
     }
