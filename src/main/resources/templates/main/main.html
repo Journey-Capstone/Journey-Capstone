@@ -8,8 +8,60 @@
 <header th:replace="partials/partials.html :: navlogin"></header>
 
 <h1>This is our Main Page</h1>
+<!-- object:user linked in BookController -->
+<div th:object="${user}">
+	<h3>Welcome,<h5 th:text="*{username}"></h5></h3>
+</div>
+
 
 <a href="/catalog"><button type="button" class="btn btn-outline-secondary">View all genres</button></a>
+
+<section class="text-center my-5 pb-3 container-fluid my-5">
+	<p><small class="text-primary p-0 m-0">Community</small></p>
+	<h2 class="fw-light">Everyday <strong class="fw-bolder">Reviews</strong></h2>
+	<i class="fa-solid fa-left-long col-2"></i><small class="text-secondary">Scroll</small><i class=" col-2 fa-solid fa-right-long"></i>
+	<!--User Review Container	-->
+	<div class="row d-flex flex-nowrap container overflow-scroll mx-auto" th:each="review : ${reviews}">
+		<!-- Card One -->
+		<div class="col-md-3 col mb-3 wholeCard">
+			<!-- Start of Card  -->
+			<div class="card m-2 shadow  w-100 w-md-25">
+				<!-- HEADER -->
+				<div class="d-flex w-100 h-25">
+					<!--  User Image    -->
+					<img src="images/index/userProfile/userProfilePic_02.jpg" class="bg-dark profilePicIndex rounded-circle shadow m-3" width="42px" height="42px">
+					<!-- Username -->
+					<p class="pt-4" th:text="${review.user.username}"></p>
+				</div>
+				<!--Book Section -->
+				<div class="d-flex justify-content-center">
+					<img src="images/index/indexBookReviews/it.jpeg" class="card-img-top rounded userReviewBook">
+				</div>
+				<!-- Stars -->
+				<div class="text-center my-2">
+					<!-- To display checked star rating icons -->
+					<i class="fa-solid star fa-star" value="1"></i>
+					<i class="fa-solid star fa-star" value="2"></i>
+					<i class="fa-solid star fa-star" value="3"></i>
+					<i class="fa-solid star fa-star" value="4"></i>
+					<i class="fa-regular star fa-star" value="5"></i>
+					<span> 4</span>
+				</div>
+				<!--  Card Body  -->
+				<div class="card-body">
+					<h5 class="card-title h-25" th:text="${review.reviewTitle}"></h5>
+					<p class="card-text cardText" th:text="${review.description}"></p>
+				</div>
+				<!-- FOOTER -->
+				<div class="card-footer">
+					<small class="text-muted">07/20/2013</small>
+				</div>
+			</div>
+			<!-- End of Card --->
+		</div>
+	</div>
+</section>
+
 <footer th:replace="partials/partials.html :: footer"></footer>
 
 <script th:replace="partials/partials.html :: search-js"></script>
