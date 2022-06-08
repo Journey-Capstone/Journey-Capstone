@@ -8,6 +8,13 @@
 <header th:replace="partials/partials.html :: navlogin"></header>
 
 <h1>This is our Main Page</h1>
+<!-- object:user linked in BookController -->
+<div th:object="${user}">
+	<h3>Welcome,<h5 th:text="*{username}"></h5></h3>
+</div>
+
+
+<a href="/catalog"><button type="button" class="btn btn-outline-secondary">View all genres</button></a>
 
 <section class="text-center my-5 pb-3 container-fluid my-5">
 	<p><small class="text-primary p-0 m-0">Community</small></p>
@@ -24,7 +31,7 @@
 					<!--  User Image    -->
 					<img src="images/index/userProfile/userProfilePic_02.jpg" class="bg-dark profilePicIndex rounded-circle shadow m-3" width="42px" height="42px">
 					<!-- Username -->
-					<p class="pt-4" th:text="${review.user}"></p>
+					<p class="pt-4" th:text="${review.user.username}"></p>
 				</div>
 				<!--Book Section -->
 				<div class="d-flex justify-content-center">
@@ -54,8 +61,6 @@
 		</div>
 	</div>
 </section>
-
-<a href="/catalog"><button type="button" class="btn btn-outline-secondary">View all genres</button></a>
 
 <footer th:replace="partials/partials.html :: footer"></footer>
 

@@ -24,6 +24,8 @@ public class BookController {
     @GetMapping("/main")
     public String mainPage(Model model){
         model.addAttribute("reviews", reviewDao.findAll());
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        model.addAttribute("user",user);
         return "main/main";
     }
 
