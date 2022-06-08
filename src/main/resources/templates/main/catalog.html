@@ -5,12 +5,61 @@
 	<title>Catalog</title>
 </head>
 <body>
-<header th:replace="partials/partials.html :: navlogin"></header>
+<header th:replace="partials/partials.html :: navCatalog"></header>
+<!--Aside so the filter is on the side of the page-->
+<aside>
 
-<h1>This is our Catalog Page</h1>
+		<section id="search" class="results">
+			<div class="flex">
+				<input
+						id="search-box"
+						class="search-box"
+						placeholder="Seach Genre, Title, Author"
+						aria-label="Search books"/>
+			</div>
+			<div class="list-book search">
+				<div class="dropdown">Enter a search term</div>
+			</div>
+		</section>
+		<ul>
+			<li class="subhead">Discover Your Next Journey</li>
+
+			<li class="subhead fs-4">Categories</li>
+			<li>
+				<a class="nav" href="#arts-photography">Arts & Photography</a>
+			</li>
+			<li>
+				<a class="nav" href="#">Childrens</a>
+			</li>
+			<li>
+				<a class="nav" href="#fantasy">Fantasy</a>
+			</li>
+			<li>
+				<a class="nav" href="#romance">Romance</a>
+			</li>
+
+			<li>
+				<a class="nav" href="#science-fiction">Science Fiction</a>
+			</li>
+			<li>
+				<a class="nav" href="#self-help">Self Help</a>
+			</li>
+			<li>
+				<a class="nav" href="#thriller">Thrillers/Suspense</a>
+			</li>
+			<li>
+				<a class="nav" href="#adolescence">Young Adult</a>
+			</li>
+			<li class="nav trigger">More</li>
+		</ul>
+
+</aside>
+
+
 
 <footer th:replace="partials/partials.html :: footer"></footer>
 
 <script th:replace="partials/partials.html :: search-js"></script>
+
 </body>
 </html>
