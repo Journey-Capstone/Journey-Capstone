@@ -20,8 +20,36 @@
     height: auto;
     z-index: 10;
 }
-
-
+.star{
+    color:  #FF9900;
+}
+.profilePicIndex{
+    background-size: cover;
+    transition: all .8s ease-in-out;
+}
+.userReviewBook{
+    height: 120px;
+    width: 80px;
+    border: 3px solid black;
+    transition: all .8s ease-in-out;
+}
+.profilePicIndex:hover, .userReviewBook:hover{
+    transform: scale(1.2);
+}
+.cardText{
+    width:90%;
+    /**Major Properties**/
+    overflow:hidden;
+    max-height: 8rem;
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box; /*Keep this it contains the items inside*/
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+}
+.wholeCard{
+    height: fit-content;
+}
 
 footer{
     position: fixed;
