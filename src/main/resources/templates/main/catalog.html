@@ -3,59 +3,206 @@
 <head th:replace="partials/partials.html :: head ('Catalog')">
 	<meta charset="UTF-8">
 	<title>Catalog</title>
+
+
 </head>
 <body>
+<style>
+	.catalog{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+	/*https://stackoverflow.com/questions/12959172/how-to-fit-height-of-aside-to-body-height*/
+    aside {
+        position: relative;
+        float:left;
+        width:20%;
+        top: 0px;
+        bottom: 0px;
+    }
+    article {
+        margin-left: 20%;
+        width: 80%;
+    }
+    .results {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    .aside {
+        display: flex;
+        padding: 32px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .head, sub-head{
+        padding: 20px;
+
+    }
+
+
+
+</style>
 <header th:replace="partials/partials.html :: navCatalog"></header>
 <!--Aside so the filter is on the side of the page-->
 <aside>
-
 		<section id="search" class="results">
-			<div class="flex">
-				<input
-						id="search-box"
-						class="search-box"
-						placeholder="Seach Genre, Title, Author"
-						aria-label="Search books"/>
+			<div class="aside">
+				<input id="search-box" class="search-box" placeholder="Seach Genre, Title, Author" aria-label="Search books"/>
 			</div>
+<!--			MODAL/DropDown Need custom JS-->
 			<div class="list-book search">
-				<div class="dropdown">Enter a search term</div>
+				<div class="dropdown"></div>
 			</div>
 		</section>
-		<ul>
-			<li class="subhead">Discover Your Next Journey</li>
+		<ul class="catalog">
+			<li class="head fs-6">Discover Your Next Journey</li>
 
-			<li class="subhead fs-4">Categories</li>
+			<li class="sub-head ">Categories</li>
 			<li>
-				<a class="nav" href="#arts-photography">Arts & Photography</a>
+				<a class="nav scrolltoview" href="#arts-photography">Arts & Photography</a>
 			</li>
 			<li>
-				<a class="nav" href="#">Childrens</a>
+				<a class="nav scrolltoview" href="#childrens">Childrens</a>
 			</li>
 			<li>
-				<a class="nav" href="#fantasy">Fantasy</a>
+				<a class="nav scrolltoview" href="#fantasy">Fantasy</a>
 			</li>
 			<li>
-				<a class="nav" href="#romance">Romance</a>
+				<a class="nav scrolltoview" href="#fiction">Fiction</a>
+			</li>
+			<li>
+				<a class="nav scrolltoview" href="#romance">Romance</a>
 			</li>
 
 			<li>
-				<a class="nav" href="#science-fiction">Science Fiction</a>
+				<a class="nav scrolltoview" href="#self-help">Self Help</a>
 			</li>
 			<li>
-				<a class="nav" href="#self-help">Self Help</a>
+				<a class="nav scrolltoview" href="#thriller">Thrillers/Suspense</a>
 			</li>
 			<li>
-				<a class="nav" href="#thriller">Thrillers/Suspense</a>
-			</li>
-			<li>
-				<a class="nav" href="#adolescence">Young Adult</a>
+				<a class="nav scrolltoview" href="#adolescence">Young Adult</a>
 			</li>
 			<li class="nav trigger">More</li>
 		</ul>
 
 </aside>
+<article>
+<!--Arts and Photography Genre-->
+<section id="arts-photography" class="results">
+	<div class="aside">
+		<h1 class="section-title">Arts & Photography</h1>
+<!--		Want to try showing 4 then a scroll or pagination-->
+	</div>
+	<div class="list-book arts-photography">
+		<div class="prompt">
+<!--Load books-->
+			<div class="loader"></div>
+		</div>
+	</div>
+</section>
 
+<!--Childrens Genre-->
+<section id="childrens" class="results">
+	<div class="aside">
+		<h1 class="section-title">Children</h1>
+		<!--		Want to try showing 4 then a scroll or pagination-->
+	</div>
+	<div class="list-book children">
+		<div class="prompt">
+			<!--Load books-->
+			<div class="loader"></div>
+		</div>
+	</div>
+</section>
 
+<!--Fantasy Genre Section-->
+<section id="fantasy" class="results">
+	<div class="aside">
+		<h1 class="section-title">Fantasy</h1>
+		<!--		Want to try showing 4 then a scroll or pagination-->
+	</div>
+	<div class="list-book fantasy">
+		<div class="prompt">
+			<!--Load books-->
+			<div class="loader"></div>
+		</div>
+	</div>
+</section>
+
+<!--Fiction Genre Section-->
+<section id="fiction" class="results">
+	<div class="aside">
+		<h1 class="section-title">Fiction</h1>
+		<!--		Want to try showing 4 then a scroll or pagination-->
+	</div>
+	<div class="list-book fiction">
+		<div class="prompt">
+			<!--Load books-->
+			<div class="loader"></div>
+		</div>
+	</div>
+</section>
+
+<!--Romance Genre Section-->
+<section id="romance" class="results">
+	<div class="aside">
+		<h1 class="section-title">Romance</h1>
+		<!--		Want to try showing 4 then a scroll or pagination-->
+	</div>
+	<div class="list-book Romance">
+		<div class="prompt">
+			<!--Load books-->
+			<div class="loader"></div>
+		</div>
+	</div>
+</section>
+
+<!--Self Help Genre-->
+<section id="self-help" class="results">
+	<div class="aside">
+		<h1 class="section-title">Self Help</h1>
+		<!--		Want to try showing 4 then a scroll or pagination-->
+	</div>
+	<div class="list-book self-help">
+		<div class="prompt">
+			<!--Load books-->
+			<div class="loader"></div>
+		</div>
+	</div>
+</section>
+
+<!--Thriller/Suspense-->
+<section id="thriller" class="results">
+	<div class="aside">
+		<h1 class="section-title">Thriller/Suspense</h1>
+		<!--		Want to try showing 4 then a scroll or pagination-->
+	</div>
+	<div class="list-book thriller">
+		<div class="prompt">
+			<!--Load books-->
+			<div class="loader"></div>
+		</div>
+	</div>
+</section>
+<!--Young Adult-->
+<section id="adolescence" class="results">
+	<div class="aside">
+		<h1 class="section-title">Young adult</h1>
+		<!--		Want to try showing 4 then a scroll or pagination-->
+	</div>
+	<div class="list-book adolescence">
+		<div class="prompt">
+			<!--Load books-->
+			<div class="loader"></div>
+		</div>
+	</div>
+</section>
+</article>
 
 <footer th:replace="partials/partials.html :: footer"></footer>
 
@@ -63,3 +210,6 @@
 
 </body>
 </html>
+
+<!--Resources-->
+<!--https://pagination.js.org/-->
