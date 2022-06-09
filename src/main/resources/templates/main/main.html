@@ -22,7 +22,7 @@
 	<!--User Review Container	-->
 	<div class="row d-flex flex-nowrap container overflow-scroll mx-auto">
 		<!-- Card One -->
-		<div class="col-md-3 col mb-3 wholeCard" th:each="review : ${reviews}">
+		<div class="col-md-3 col mb-3 wholeCard" th:each="review : ${reviews}" th:unless="${review.id > 6}">
 			<!-- Start of Card  -->
 			<div class="card m-2 shadow  w-100 w-md-25">
 				<!-- HEADER -->
