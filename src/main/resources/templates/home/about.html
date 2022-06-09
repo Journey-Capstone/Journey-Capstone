@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
 <head th:replace="partials/partials.html :: head ('About us')">
 
 	<title>About us</title>
@@ -8,7 +8,21 @@
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 </head>
 <body>
-<header th:replace="partials/partials.html :: navbar"></header>
+
+<!--Navbar-->
+<!--Using Sec Authorize to display different navbar for authenticated users/anonymous users(visitor)-->
+
+<!--Logged in User-->
+<div sec:authorize="isAuthenticated()">
+	<header th:replace="partials/partials.html :: navlogin"></header>
+</div>
+
+<!--Anonymous User-->
+<div sec:authorize="isAnonymous()">
+	<header th:replace="partials/partials.html :: navbar"></header>
+</div>
+
+
 <div  class="container">
 	<div class="bordered;1px solid red">
 
