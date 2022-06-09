@@ -1,7 +1,9 @@
 package com.journey.journeycapstone.controllers;
 
 import com.journey.journeycapstone.models.User;
+import com.journey.journeycapstone.repositories.ReviewRepository;
 import com.journey.journeycapstone.repositories.UserRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,11 +15,13 @@ import java.util.Properties;
 @Controller
 public class UserController {
     private UserRepository userDao;
+    private ReviewRepository reviewDao;
     private PasswordEncoder passwordEncoder;
 
-    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder) {
+    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder,ReviewRepository reviewDao) {
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
+        this.reviewDao = reviewDao;
     }
 
     @GetMapping("/register")
@@ -34,8 +38,29 @@ public class UserController {
         userDao.save(user);
         return "redirect:/login";
     }
+//    @GetMapping("/profile")
+//    public String profile(){
+//        return "users/profile";
+//    }
+
     @GetMapping("/profile")
-    public String profile(){
+    public String profile(Model model){
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        model.addAttribute("reviews", reviewDao.findAllByUser(user));
+        model.addAttribute("user",user);
+        model.addAttribute("loggedInUser",user);
+        return "users/profile";
+    }
+
+    @GetMapping("/profile/{name}")
+    public String usersProfile(@PathVariable String name, Model model){
+        User user = userDao.findByUsername(name);
+        User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+
+        model.addAttribute("user",user);
+        model.addAttribute("loggedInUser",loggedInUser);
+        model.addAttribute("reviews", reviewDao.findAllByUser(user));
         return "users/profile";
     }
 }
