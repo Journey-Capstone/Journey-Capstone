@@ -5,6 +5,15 @@
     background-image: url("../images/library.jpg");
     background-size: cover;
 }
+
+
+.aboutJourney{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
 /*The Index Main header*/
 .introHeading{
     font-weight: bolder;
@@ -120,7 +129,7 @@
 
 footer{
     position: fixed;
-    left: 0;
     bottom: 0;
     width: 100%;
 }
+
