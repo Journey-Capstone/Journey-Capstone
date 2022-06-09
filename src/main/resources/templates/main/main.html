@@ -30,7 +30,7 @@
 					<!--  User Image    -->
 					<img src="images/index/userProfile/userProfilePic_02.jpg" class="bg-dark profilePicIndex rounded-circle shadow m-3" width="42px" height="42px">
 					<!-- Username -->
-					<p class="pt-4" th:text="${review.user.username}"></p>
+					<a th:href="|/profile/${review.getUser().getUsername()}|"> <p class="pt-4" th:text="${review.user.username}"></p></a>
 				</div>
 				<!--Book Section -->
 				<div class="d-flex justify-content-center">
