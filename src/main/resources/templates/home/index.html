@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
 	<head th:replace="partials/partials.html :: head ('Welcome to journey')"></head>
 	<body class="pb-5">
-		<!--Navigation Bar-->
+	<!--Using Sec Authorize to display different navbar for authenticated users/anonymous users(visitor)-->
+
+	<!--Navbar-->
+	<!--Using Sec Authorize to display different navbar for authenticated users/anonymous users(visitor)-->
+
+	<!--Logged in User-->
+	<div sec:authorize="isAuthenticated()">
+		<header th:replace="partials/partials.html :: navlogin"></header>
+	</div>
+
+	<!--Anonymous User-->
+	<div sec:authorize="isAnonymous()">
 		<header th:replace="partials/partials.html :: navbar"></header>
+	</div>
+
 
 		<!--Introduction Section-->
 		<main id="introSection" class="d-flex align-items-center text-white position-relative">
