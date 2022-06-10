@@ -75,7 +75,7 @@
 			<!-- If the user looks at another user's profile -->
 			<!-- Will see the username of the page owner-->
 			<div th:if="${loggedInUser.id != user.id}">
-				<div class="d-flex justify-content-center">
+				<div class="d-none justify-content-center">
 					<button type="button" class="btn btn-warning w-25" onclick="settingBtnClicked()">
 						<i class="fa-solid fa-gear"></i>
 					</button>
