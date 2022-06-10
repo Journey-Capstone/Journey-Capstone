@@ -57,7 +57,10 @@ public class BookController {
 
 
     @GetMapping("/catalog")
-    public String catalogPage(){
+    public String catalogPage(Model model){
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        model.addAttribute("user",user);
+
         return "main/catalog";
     }
 
