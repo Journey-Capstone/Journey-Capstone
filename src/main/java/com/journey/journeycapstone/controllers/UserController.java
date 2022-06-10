@@ -49,7 +49,7 @@ public class UserController {
         model.addAttribute("reviews", reviewDao.findAllByUser(user));
         model.addAttribute("user",user);
         model.addAttribute("loggedInUser",user);
-        return "users/profile";
+        return "users/profile/";
     }
 
     @GetMapping("/profile/{name}")
