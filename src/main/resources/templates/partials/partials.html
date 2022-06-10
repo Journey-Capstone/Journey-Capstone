@@ -26,7 +26,7 @@
 	</nav>
 
 	<!--Logged in user Navbar-->
-	<nav th:fragment="navlogin" class="navbar navbar-expand-lg bg-light" th:object="${user}">
+	<nav th:fragment="navlogin" class="navbar navbar-expand-lg bg-light">
 		<div class="d-flex justify-content-evenly col-2" >
 			<a class="navbar-brand" href="/main">
 				<img src="./images/book_logo.png" alt="" width="50" height="40">
@@ -45,7 +45,7 @@
 			<a href="/about">About Us</a>
 			<a href="/catalog">Catalog</a>
 			<a href="/reviews">Reviews</a>
-			<a href="/profile/">Profile</a>
+			<a href="/profile">Profile</a>
 		</div>
 		<form th:action="@{/logout}" th:method="post">
 			<button class="btn-link btn col-2">Logout</button>
