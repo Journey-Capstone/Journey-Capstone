@@ -44,17 +44,23 @@
 		<!-- Personal Information  --->
 		<!-- This information will be replaced with a form when the setting button is clicked.  --->
 		<div class="p-5" id="profilePageBeforeSettingButtonIsClicked">
-			<p th:text="${user.bio}">Please Create a Bio!</p>
+			<p th:text="'Bio: ' + ${user.bio}" />
+<!--			<p th:text="${user.bio}">Please Create a Bio!</p>-->
 			<!--    Personal Email    -->
-			<p><strong>Personal Email: </strong><span th:text="${user.email}">@Email.com</span></p>
+			<p th:text="'Email: ' + ${user.email}" />
+<!--			<p><strong>Personal Email: </strong><span th:text="${user.email}">@Email.com</span></p>-->
 			<!-- City State -->
-			<p><strong>Location: </strong><span th:text="${user.city}">City</span>, <span th:text="${user.state}">St</span></p>
+			<p th:text="'Location: ' + ${user.city} + ', ' + ${user.state}" />
+<!--			<p><strong>Location: </strong><span th:text="${user.city}">City</span>, <span th:text="${user.state}">St</span></p>-->
 			<!--    Favorite Genre:  San Antoino, Tx    -->
-			<p><strong>Favorite Genre: </strong><span th:text="${user.favorite_genre}">Genre</span></p>
+			<p th:text="'Favorite Genre: ' + ${user.favorite_genre}" />
+<!--			<p><strong>Favorite Genre: </strong><span th:text="${user.favorite_genre}">Genre</span></p>-->
 			<!--   Favorite Book:  tuesday qwith     -->
-			<p><strong>Favorite Book: </strong><span th:text="${user.favorite_book}">Book Title</span></p>
+			<p th:text="'Favorite Book: ' + ${user.favorite_book}" />
+<!--			<p><strong>Favorite Book: </strong><span th:text="${user.favorite_book}">Book Title</span></p>-->
 			<!--   Favorite Quote:  Just do it     -->
-			<p><strong>Favorite Quote: </strong><span th:text="${user.favorite_quote}">Git Push Origin Main</span></p>
+			<p th:text="'Favorite Quote: ' + ${user.favorite_quote}" />
+<!--			<p><strong>Favorite Quote: </strong><span th:text="${user.favorite_quote}">Git Push Origin Main</span></p>-->
 			<!-- If the User looks at profile page and its their profile -->
 			<!-- Will be introduced to a Welcome username-->
 			<div th:if="${loggedInUser.id == user.id}">
