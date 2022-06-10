@@ -83,7 +83,7 @@
 <h1>This is our single book page</h1>
 
 <!--th:field must match Model name-->
-<form th:action="@{/books}" class="w-50 mx-auto border p-3 shadow rounded" id="reviewForm" method="post" th:object="${review}">
+<form th:action="@{/books}" class="w-50 mx-auto border p-3 shadow rounded" id="reviewForm" method="post" >
 	<section class="form-group">
 		<label for="review_title" class="text-dark">Title:</label>
 		<input id="review_title"
