@@ -1,6 +1,8 @@
 package com.journey.journeycapstone.controllers;
 
+import com.journey.journeycapstone.models.User;
 import com.journey.journeycapstone.repositories.ReviewRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +20,12 @@ public class ReviewController {
     @GetMapping("/reviews")
     public String allReviews(Model model){
         model.addAttribute("reviews", reviewDao.findAll());
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        model.addAttribute("user",user);
         return "reviews/reviews";
     }
+
+
 
 //@GetMapping
 //    public String allAds(Model model){

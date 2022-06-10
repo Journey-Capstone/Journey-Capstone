@@ -8,6 +8,7 @@
 <header th:replace="partials/partials.html :: navlogin"></header>
 
 <h1>Reviews Page</h1>
+<div th:object="${user}"></div>
 <!-- review.xyz must reference the model naming convention -->
 <ul>
 	<li th:each="review : ${reviews}">

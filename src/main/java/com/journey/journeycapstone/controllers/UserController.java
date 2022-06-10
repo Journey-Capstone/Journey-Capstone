@@ -52,15 +52,15 @@ public class UserController {
         return "users/profile";
     }
 
-    @GetMapping("/profile/{name}")
-    public String usersProfile(@PathVariable String name, Model model){
-        User user = userDao.findByUsername(name);
+    @GetMapping("/profile/{username}")
+    public String usersProfile(@PathVariable String username, Model model){
+        User user = userDao.findByUsername(username);
         User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 
+        model.addAttribute("reviews", reviewDao.findAllByUser(user));
         model.addAttribute("user",user);
         model.addAttribute("loggedInUser",loggedInUser);
-        model.addAttribute("reviews", reviewDao.findAllByUser(user));
         return "users/profile";
     }
 }
