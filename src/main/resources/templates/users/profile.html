@@ -44,17 +44,17 @@
 		<!-- Personal Information  --->
 		<!-- This information will be replaced with a form when the setting button is clicked.  --->
 		<div class="p-5" id="profilePageBeforeSettingButtonIsClicked">
-			<p value=${user.bio}>Bio software developer | San Antonio | Push Everyday</p>
+			<p th:text="${user.bio}">Please Create a Bio!</p>
 			<!--    Personal Email    -->
-			<p><strong>Personal Email: </strong><span th:text="${user.email}">Email@Email.com</span></p>
+			<p><strong>Personal Email: </strong><span th:text="${user.email}">@Email.com</span></p>
 			<!-- City State -->
 			<p><strong>Location: </strong><span th:text="${user.city}">City</span>, <span th:text="${user.state}">St</span></p>
 			<!--    Favorite Genre:  San Antoino, Tx    -->
-			<p><strong>Favorite Genre: </strong><span value=${user.genre}>Genre</span></p>
+			<p><strong>Favorite Genre: </strong><span th:text="${user.favorite_genre}">Genre</span></p>
 			<!--   Favorite Book:  tuesday qwith     -->
-			<p><strong>Favorite Book: </strong><span value=${user.book}>Book Title</span></p>
+			<p><strong>Favorite Book: </strong><span th:text="${user.favorite_book}">Book Title</span></p>
 			<!--   Favorite Quote:  Just do it     -->
-			<p><strong>Favorite Quote: </strong><span value=${user.quote}>Git Push Origin Main</span></p>
+			<p><strong>Favorite Quote: </strong><span th:text="${user.favorite_quote}">Git Push Origin Main</span></p>
 			<!-- If the User looks at profile page and its their profile -->
 			<!-- Will be introduced to a Welcome username-->
 			<div th:if="${loggedInUser.id == user.id}">
@@ -88,8 +88,7 @@
 				<label for="firstName" class="text-dark loginLabel">First Name</label>
 				<input id="firstName"
 					   th:field="*{first_name}"
-					   th:value="first_name"
-					   value="${user.last_name}"
+					   th:value="${first_name}"
 					   class="form-control"
 					   type="text"
 					   minlength="3" maxlength="50"
@@ -103,8 +102,7 @@
 				<label for="lastName" class="text-dark loginLabel">Last Name</label>
 				<input id="lastName"
 					   th:field="*{last_name}"
-					   th:value="last_name"
-					   value="${user.last_name}"
+					   th:value="${last_name}"
 					   class="form-control"
 					   type="text"
 					   minlength="3" maxlength="50"
@@ -117,8 +115,7 @@
 				<label for="settingUserBio" class="form-label">Bio:</label>
 				<input
 						th:field="*{bio}"
-						th:value="user.bio"
-						value="${user.bio}"
+						th:value="${bio}"
 						type="text"
 						class="form-control"
 						id="settingUserBio"
@@ -130,8 +127,7 @@
 				<label for="settingEmail" class="form-label">Email address</label>
 				<input
 						th:field="*{email}"
-						th:value="user.email"
-						value="${user.email}"
+						th:value="${email}"
 						minlength="6" maxlength="254"
 						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 						title="Please provide a valid email"
@@ -147,8 +143,8 @@
 				<label for="settingPassword" class="form-label">Password</label>
 				<input
 						th:field="*{password}"
+						th:value="${password}"
 						type="password"
-						value="${user.password}"
 						class="form-control"
 						id="settingPassword"
 						min="6" maxlength="15"
@@ -161,7 +157,7 @@
 				<label for="city" class="text-dark loginLabel" >City</label>
 				<input id="city"
 					   th:field="*{city}"
-					   value="${user.city}"
+					   th:value="${city}"
 					   class="form-control loginInput"
 					   type="text"
 					   minlength="3" maxlength="250"
@@ -170,7 +166,7 @@
 			<!-- State -->
 			<div class="form-group mt-3">
 				<label for="state" class="text-dark loginLabel" >State</label>
-				<select id="state" name="state" th:field="*{state}" value="${user.state}">
+				<select id="state" name="state" th:field="*{state}" th:value="${state}">
 					<option value="AL">Alabama</option>
 					<option value="AK">Alaska</option>
 					<option value="AZ">Arizona</option>
@@ -227,21 +223,21 @@
 			<!--   Settings for Favorite Genre   -->
 			<div class="mb-3">
 				<label for="settingFavoriteGenre" class="form-label">Favorite Genre:</label>
-				<input type="text" class="form-control" th:field="*{favorite_genre}" value="${user.favorite_genre}" id="settingFavoriteGenre" aria-describedby="settingFavoriteGenre">
+				<input type="text" class="form-control" th:field="*{favorite_genre}" th:value="${favorite_genre}" id="settingFavoriteGenre" aria-describedby="settingFavoriteGenre">
 			</div>
 			<!--   Settings for Favorite Book   -->
 			<div class="mb-3">
 				<label for="settingFavoriteGenre" class="form-label">Favorite Book:</label>
-				<input type="text" class="form-control"  value="${user.favorite_book}" th:field="*{favorite_book}" id="settingFavoriteBook" aria-describedby="settingFavoriteBook">
+				<input type="text" class="form-control" th:field="*{favorite_book}" th:value="${favorite_book}" id="settingFavoriteBook" aria-describedby="settingFavoriteBook">
 			</div>
 			<!--   Settings for Favorite Quote   -->
 			<div class="mb-3">
 				<label for="settingFavoriteQuote" class="form-label">Favorite Quote:</label>
-				<input type="text" class="form-control" th:field="*{favorite_quote}" value="${user.favorite_quote}"  id="settingFavoriteQuote" aria-describedby="settingFavoriteQuote">
+				<input type="text" class="form-control" th:field="*{favorite_quote}" th:value="${favorite_quote}"  id="settingFavoriteQuote" aria-describedby="settingFavoriteQuote">
 			</div>
 			<!--   Settings for Subscribe  -->
 			<label>
-				<input type="checkbox" th:field="*{is_subscribed}" value="${user.is_subscribed}" id="subscribe"> Subscribe to newsletter
+				<input type="checkbox" th:field="*{is_subscribed}" th:value="${is_subscribed}" id="subscribe"> Subscribe to newsletter
 			</label>
 			<!--   Submit Button   -->
 			<div class="d-flex justify-content-center gap-3">
