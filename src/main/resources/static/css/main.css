@@ -1,4 +1,6 @@
 *{margin: 0;padding: 0;box-sizing: border-box;}
+body{height: 100%;width:100%}
+
 /*The Index Main Section*/
 #introSection{
     height: 75vh;
@@ -133,3 +135,14 @@ footer{
     width: 100%;
 }
 
+/*Profile Page*/
+/*-----   Profile   -----*/
+#profileSidebar {
+    background-color: #C8DEDA;
+    height:100vh ;
+    /*width:33.33%;*/
+}
+#profilePageAfterSettingButtonIsClicked{
+    display:none;
+    background-color: #C8DEDA;
+}

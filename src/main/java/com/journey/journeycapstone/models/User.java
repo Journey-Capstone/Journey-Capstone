@@ -48,6 +48,18 @@ public class User {
     @Column(nullable = true, length = 30)
     private String favorite_genre;
 
+    // Just added for profile page/Settings Page
+    @Column(nullable = true, length = 150)
+    private String favorite_quote;
+
+    // Just added for profile page/Settings Page
+    @Column(nullable = true, length = 150)
+    private String favorite_book;
+
+    // Just added for profile page/Settings Page
+    @Column(nullable = true, length = 250)
+    private String bio;
+
     @Column(length = 40)
     private String City;
 
@@ -59,7 +71,31 @@ public class User {
 
     public User() {
     }
+//   Getters and Setters that was added by Gilly for Profile Page
+    public String getBio() {
+        return bio;
+    }
 
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getFavorite_book() {
+        return favorite_book;
+    }
+
+    public void setFavorite_book(String favorite_book) {
+        this.favorite_book = favorite_book;
+    }
+
+    public String getFavorite_quote() {
+        return favorite_quote;
+    }
+
+    public void setFavorite_quote(String favorite_quote) {
+        this.favorite_quote = favorite_quote;
+    }
+//------END OF Getters and Setters for profile page
     public String getFirst_name() {
         return first_name;
     }
