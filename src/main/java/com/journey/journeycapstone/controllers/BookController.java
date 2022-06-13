@@ -38,6 +38,8 @@ public class BookController {
     @GetMapping("/books")
     public String reviewsForm(Model model){
         model.addAttribute("review", new Review());
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        model.addAttribute("user",user);
         return "main/singleBook";
     }
     @PostMapping("/books")
